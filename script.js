@@ -527,7 +527,7 @@ function renderProjects() {
   const P = PROJECTS;
   const lab = t("ph");
   const media = {
-    "craft-egypt": `<div class="craft"><div class="m a clip">${sl("craft-egypt", 0, lab, false, "img")}</div></div><div class="craft-pair"><div class="m b clip">${sl("craft-egypt", 1, t("ui"), false, "img")}</div><div class="m c clip">${sl("craft-egypt", 2, t("pk"), false, "img")}</div></div><div class="craft-extra"><div class="m vid clip" data-v>${sl("craft-egypt", 0, t("pv") + " 1", false, "vid")}</div><div class="m vid clip" data-v>${sl("craft-egypt", 1, t("pv") + " 2", false, "vid")}</div>${presCard(P[0])}</div>`,
+    "craft-egypt": `<div class="craft"><div class="m a clip">${sl("craft-egypt", 0, lab, false, "img")}</div><div class="craft-pair"><div class="m b clip">${sl("craft-egypt", 1, t("ui"), false, "img")}</div><div class="m c clip">${sl("craft-egypt", 2, t("pk"), false, "img")}</div></div></div><div class="craft-extra"><div class="m vid clip" data-v>${sl("craft-egypt", 0, t("pv") + " 1", false, "vid")}</div><div class="m vid clip" data-v>${sl("craft-egypt", 1, t("pv") + " 2", false, "vid")}</div>${presCard(P[0])}</div>`,
     "video-editing": `<div class="reels">${[0, 1, 2].map((i) => `<div class="m vid clip" data-v>${sl("video-editing", i, t("pv") + " " + (i + 1), false, "vid")}</div>`).join("")}</div>`,
     learnexa: `<div class="lx">${[0, 1, 2].map((i) => `<div class="browser lx-c clip"><div class="bar"><i></i><i></i><i></i></div>${sl("learnexa", i, [t("navL"), lab, t("ui")][i], true)}</div>`).join("")}</div>`,
     "selected-design": `<div class="gal">${[1, 2, 3, 4, 5, 6, 7].map((i) => `<div class="m clip">${sl("selected-design", i - 1, t("phDesign") + " " + i)}</div>`).join("")}</div>`,
@@ -538,7 +538,7 @@ function renderProjects() {
   ).join("");
   $("#idx").innerHTML = P.map(
     (p) =>
-      `<a class="ix" href="#p-${p.id}"><div class="th"${p.thumbBg ? ` style="background:${p.thumbBg}"` : ""}>${thumb(p)}</div><div class="r"><b>${p.number}</b><div style="flex:1"><span>${p.title[L]}</span><small>${p.category[L]}</small></div></div></a>`,
+      `<a class="ix" href="#p-${p.id}" aria-label="${p.title[L]}"><span class="fback"></span><span class="th"${p.thumbBg ? ` style="background:${p.thumbBg}"` : ""}>${thumb(p)}</span><span class="ffront"><b>${p.number}</b><span>${p.title[L]}</span><small>${p.category[L]}</small></span></a>`,
   ).join("");
   $$("[data-pres]").forEach((b) => (b.onclick = openPres));
   observe();
@@ -568,20 +568,20 @@ function renderCerts() {
   ).join("");
   $$(".cert").forEach(
     (b) =>
-      (b.onclick = () => {
-        const c = CERTS[b.dataset.c];
-        $("#mt").textContent = c.title[L];
-        $("#mm").textContent = c.issuer[L] + " · " + c.date[L];
-        $("#md").textContent = c.description[L];
-        $("#mph").innerHTML = c.image
-          ? `<img src="${encodeURI(c.image)}" alt="${c.title[L]}" style="width:100%;height:100%;object-fit:contain">`
-          : c.pdf
-            ? `<iframe src="${encodeURI(c.pdf)}#toolbar=0&navpanes=0&scrollbar=0&view=Fit" title="${c.title[L]}"></iframe>`
-            : `<span>${t("certPrev")}</span>`;
-        $("#mph").style.setProperty("--cr", c.ratio || 1.414);
-        $("#modal").classList.add("o");
-        $("#mx").focus();
-      }),
+    (b.onclick = () => {
+      const c = CERTS[b.dataset.c];
+      $("#mt").textContent = c.title[L];
+      $("#mm").textContent = c.issuer[L] + " · " + c.date[L];
+      $("#md").textContent = c.description[L];
+      $("#mph").innerHTML = c.image
+        ? `<img src="${encodeURI(c.image)}" alt="${c.title[L]}" style="width:100%;height:100%;object-fit:contain">`
+        : c.pdf
+          ? `<iframe src="${encodeURI(c.pdf)}#toolbar=0&navpanes=0&scrollbar=0&view=Fit" title="${c.title[L]}"></iframe>`
+          : `<span>${t("certPrev")}</span>`;
+      $("#mph").style.setProperty("--cr", c.ratio || 1.414);
+      $("#modal").classList.add("o");
+      $("#mx").focus();
+    }),
   );
   observe();
 }
@@ -626,21 +626,30 @@ function sil(a) {
   return `<div class="sil" role="img" aria-label="${a}"><svg viewBox="0 0 400 520" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><defs><linearGradient id="sg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2a2a2a"/><stop offset="1" stop-color="#11110F"/></linearGradient></defs><path d="M200 50c-58 0-92 46-92 108 0 52 26 88 58 103-78 22-136 78-146 259h360c-10-181-68-237-146-259 32-15 58-51 58-103 0-62-34-108-92-108z" fill="url(#sg)" stroke="#C6F135" stroke-opacity=".35"/></svg><span class="meta">${t("phPortrait")}</span></div>`;
 }
 
+function renderWord() {
+  const w = t("hWord"),
+    badge = `<span class="o-badge"><span class="portrait" id="portrait"></span></span>`;
+  const [a, b] = L === "en" ? [w.slice(0, 5), w.slice(6)] : [w, ""];
+  $("#word").innerHTML = L === "ar" ? `${badge}<span>${a}</span>` : `<span>${a}</span>${badge}${b ? `<span>${b}</span>` : ""}`;
+  $("#word").setAttribute("aria-label", w);
+}
+
 function renderPortrait() {
   $("#portrait").innerHTML = PORTRAIT_SRC
-    ? `<img src="${PORTRAIT_SRC}" alt="${t("ariaP")}" loading="eager">`
+    ? `<img src="${PORTRAIT_SRC}" alt="${t("ariaP")}" loading="eager" decoding="async" fetchpriority="high">`
     : sil(t("ariaP"));
   const sc = $(".lap .scr2");
   if (sc && CONTACT_SCREEN) {
     sc.classList.add("has");
     sc.innerHTML = `${mediaTag(CONTACT_SCREEN, "Craft Egypt", "img")}<span class="sc-t"><b>Craft Egypt</b></span>`;
   }
-  const cv = $(".cvis > .ph");
-  if (cv && PORTRAIT_SRC)
-    cv.innerHTML = `<img src="${PORTRAIT_SRC}" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:top;filter:none">`;
+  const cut = $("#cutout");
+  if (cut && PORTRAIT_SRC) cut.innerHTML = `<img src="${PORTRAIT_SRC}" alt="" loading="lazy" decoding="async">`;
+  const av = $(".avatar");
+  if (av && PORTRAIT_SRC) av.style.backgroundImage = `url("${PORTRAIT_SRC}")`;
   const a = $(".about .ph");
   if (a && PORTRAIT_SRC) {
-    a.innerHTML = `<img src="${PORTRAIT_SRC}" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:top;filter:none">`;
+    a.innerHTML = `<img src="${PORTRAIT_SRC}" alt="${t("ariaP")}" loading="lazy" decoding="async">`;
   }
 }
 
@@ -648,7 +657,7 @@ function setLang(l) {
   L = l;
   const h = document.documentElement;
   h.lang = l;
-  h.dir = l === "ar" ? "rtl" : "ltr";
+  h.dir = "ltr"; // identical layout in both languages; Arabic text blocks are set RTL in CSS
   $$("[data-i]").forEach((e) => {
     const v = t(e.dataset.i);
     if (v) e[e.hasAttribute("data-html") ? "innerHTML" : "textContent"] = v;
@@ -669,10 +678,12 @@ function setLang(l) {
     .repeat(6);
   if (!CONTACT.email) $("#mail").textContent = t("emailSoon");
   document.title = t("docTitle");
+  renderWord();
   renderPortrait();
+  queueFit();
   try {
     localStorage.setItem("lang", l);
-  } catch (e) {}
+  } catch (e) { }
 }
 
 $$(".lang button").forEach((b) => (b.onclick = () => setLang(b.dataset.l)));
@@ -694,7 +705,15 @@ function observe() {
         threshold: 0.15,
       },
     );
-  $$(".rv:not(.in),.step:not(.in)").forEach((e) => io.observe(e));
+  // every block that should animate in gets the same reveal, staggered by its position among siblings
+  $$(
+    ".head h2,.head p,.gc,.bc,.xp,.atext > *,.sel,.cpanel,.proj,.jr .r,.tool,.step",
+  ).forEach((e) => e.classList.add("rv"));
+  $$(".rv:not(.in)").forEach((e) => {
+    const sib = [...e.parentElement.children].filter((c) => c.classList.contains("rv"));
+    e.style.setProperty("--d", Math.min(sib.indexOf(e), 5) * 90 + "ms");
+  });
+  $$(".rv:not(.in),.fan:not(.in),.torn:not(.in)").forEach((e) => io.observe(e));
   cio =
     cio ||
     new IntersectionObserver(
@@ -732,7 +751,7 @@ document.addEventListener("keydown", (e) => {
     closePres();
   }
   if ($("#pmodal").classList.contains("o") && ps.length > 1) {
-    const d = L === "ar" ? -1 : 1;
+    const d = 1;
     if (e.key === "ArrowRight") pStep(d);
     if (e.key === "ArrowLeft") pStep(-d);
   }
@@ -834,8 +853,7 @@ $("#modal").onclick = (e) => {
 const RM = matchMedia("(prefers-reduced-motion:reduce)").matches;
 
 const tr = $("#tr"),
-  words = () => $$("#tr [data-w]"),
-  pt = $("#portrait");
+  words = () => $$("#tr [data-w]");
 
 function onScroll() {
   const y = scrollY;
@@ -850,7 +868,6 @@ function onScroll() {
   $$(".links a").forEach((a) =>
     a.classList.toggle("active", a.getAttribute("href") === "#" + activeId),
   );
-  if (!RM && y < innerHeight * 1.2) pt.style.transform = `translateY(${y * 0.05}px)`;
   const r = tr.getBoundingClientRect(),
     p = Math.min(0.999, Math.max(0, -r.top / (r.height - innerHeight)));
   const i = Math.floor(p * 5);
@@ -858,6 +875,13 @@ function onScroll() {
     w.classList.toggle("on", k === i && r.top < innerHeight && r.bottom > 0),
   );
   $("#trc").textContent = "0" + (i + 1);
+  const tb = $(".torn"),
+    tn = $(".torn-name");
+  if (tb && tn && !RM) {
+    const b = tb.getBoundingClientRect();
+    if (b.bottom > 0 && b.top < innerHeight)
+      tn.style.setProperty("--tn", ((0.5 - (innerHeight - b.top) / (innerHeight + b.height)) * 180).toFixed(1) + "px");
+  }
 }
 
 addEventListener("scroll", onScroll, {
@@ -883,8 +907,8 @@ if (fine) {
       seen = true;
       rx = x;
       ry = y;
-      root.classList.add("cur-on");
     }
+    root.classList.add("cur-on");
   });
   document.addEventListener("mouseleave", () => root.classList.remove("cur-on"));
   document.addEventListener("mouseenter", () => seen && root.classList.add("cur-on"));
@@ -916,11 +940,11 @@ if (fine) {
   if (!RM) {
     const hero = $(".hero"),
       layers = [
-        [".portrait", -8],
-        [".disc", 14],
-        [".ring", -18],
-        [".swoosh", 10],
-        [".seal", -22],
+        [".portrait", -10],
+        [".s1", 16],
+        [".s2", -14],
+        [".s3", 12],
+        [".seal", -10],
       ].map(([s, k]) => [$(s), k]);
     let raf = 0;
     hero.addEventListener("mousemove", (e) => {
@@ -929,11 +953,19 @@ if (fine) {
         ny = (e.clientY - r.top) / r.height - 0.5;
       cancelAnimationFrame(raf);
       raf = requestAnimationFrame(() =>
-        layers.forEach(([el, k]) => el && (el.style.translate = `${nx * k}px ${ny * k}px`)),
+        layers.forEach(([el, k]) => {
+          if (!el) return;
+          el.style.setProperty("--px", `${(nx * k).toFixed(1)}px`);
+          el.style.setProperty("--py", `${(ny * k).toFixed(1)}px`);
+        }),
       );
     });
     hero.addEventListener("mouseleave", () =>
-      layers.forEach(([el]) => el && (el.style.translate = "")),
+      layers.forEach(([el]) => {
+        if (!el) return;
+        el.style.removeProperty("--px");
+        el.style.removeProperty("--py");
+      }),
     );
   }
 }
@@ -953,57 +985,36 @@ $$(".sticker").forEach((el) => {
     if (!el.classList.contains("drag")) return;
     ox = e.clientX - sx;
     oy = e.clientY - sy;
-    el.style.translate = `${ox}px ${oy}px`;
+    el.style.setProperty("--dx", `${ox}px`);
+    el.style.setProperty("--dy", `${oy}px`);
   });
   ["pointerup", "pointercancel"].forEach((ev) =>
     el.addEventListener(ev, () => el.classList.remove("drag")),
   );
 });
 
-function fitHero() {
-  const st = $(".stage"),
-    w = $(".word");
-  if (!st || !w) return;
-  const REF = 100;
-  st.style.setProperty("--wsize", REF + "px");
-  const rg = document.createRange();
-  rg.selectNodeContents(w);
-  const textW = rg.getBoundingClientRect().width,
-    avail = st.clientWidth;
-  if (!textW || !avail) {
-    st.style.removeProperty("--wsize");
-    return;
-  }
-  const size = Math.min(
-    ((REF * avail) / textW) * 0.98,
-    innerWidth * (L === "ar" ? 0.27 : 0.3),
-    innerHeight * 0.55,
-  );
-  st.style.setProperty("--wsize", Math.max(28, size).toFixed(2) + "px");
+
+function fitWord() {
+  const w = $("#word");
+  if (!w) return;
+  w.style.fontSize = "";
+  const kids = [...w.children];
+  if (!kids.length) return;
+  const l = Math.min(...kids.map((k) => k.getBoundingClientRect().left)),
+    r = Math.max(...kids.map((k) => k.getBoundingClientRect().right)),
+    avail = w.parentElement.clientWidth * 0.96,
+    cur = parseFloat(getComputedStyle(w).fontSize);
+  if (r - l > avail) w.style.fontSize = ((cur * avail) / (r - l)).toFixed(2) + "px";
 }
 
 let fitRaf = 0;
-
-function queueFit() {
+const queueFit = () => {
   cancelAnimationFrame(fitRaf);
-  fitRaf = requestAnimationFrame(fitHero);
-}
-
-const setLangBase = setLang;
-
-setLang = function (lang) {
-  setLangBase(lang);
-  fitHero();
+  fitRaf = requestAnimationFrame(fitWord);
 };
-
 addEventListener("resize", queueFit);
-
-addEventListener("orientationchange", queueFit);
-
-if (window.ResizeObserver) new ResizeObserver(queueFit).observe($(".hero"));
-
 if (document.fonts) {
-  document.fonts.ready.then(fitHero);
+  document.fonts.ready.then(fitWord);
   document.fonts.addEventListener("loadingdone", queueFit);
 }
 
@@ -1042,7 +1053,7 @@ let saved = "en";
 
 try {
   saved = localStorage.getItem("lang") || "en";
-} catch (e) {}
+} catch (e) { }
 
 setLang(saved === "ar" ? "ar" : "en");
 
