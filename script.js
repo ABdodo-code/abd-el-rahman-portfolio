@@ -568,20 +568,20 @@ function renderCerts() {
   ).join("");
   $$(".cert").forEach(
     (b) =>
-    (b.onclick = () => {
-      const c = CERTS[b.dataset.c];
-      $("#mt").textContent = c.title[L];
-      $("#mm").textContent = c.issuer[L] + " · " + c.date[L];
-      $("#md").textContent = c.description[L];
-      $("#mph").innerHTML = c.image
-        ? `<img src="${encodeURI(c.image)}" alt="${c.title[L]}" style="width:100%;height:100%;object-fit:contain">`
-        : c.pdf
-          ? `<iframe src="${encodeURI(c.pdf)}#toolbar=0&navpanes=0&scrollbar=0&view=Fit" title="${c.title[L]}"></iframe>`
-          : `<span>${t("certPrev")}</span>`;
-      $("#mph").style.setProperty("--cr", c.ratio || 1.414);
-      $("#modal").classList.add("o");
-      $("#mx").focus();
-    }),
+      (b.onclick = () => {
+        const c = CERTS[b.dataset.c];
+        $("#mt").textContent = c.title[L];
+        $("#mm").textContent = c.issuer[L] + " · " + c.date[L];
+        $("#md").textContent = c.description[L];
+        $("#mph").innerHTML = c.image
+          ? `<img src="${encodeURI(c.image)}" alt="${c.title[L]}" style="width:100%;height:100%;object-fit:contain">`
+          : c.pdf
+            ? `<iframe src="${encodeURI(c.pdf)}#toolbar=0&navpanes=0&scrollbar=0&view=Fit" title="${c.title[L]}"></iframe>`
+            : `<span>${t("certPrev")}</span>`;
+        $("#mph").style.setProperty("--cr", c.ratio || 1.414);
+        $("#modal").classList.add("o");
+        $("#mx").focus();
+      }),
   );
   observe();
 }
@@ -683,7 +683,7 @@ function setLang(l) {
   queueFit();
   try {
     localStorage.setItem("lang", l);
-  } catch (e) { }
+  } catch (e) {}
 }
 
 $$(".lang button").forEach((b) => (b.onclick = () => setLang(b.dataset.l)));
@@ -1053,7 +1053,7 @@ let saved = "en";
 
 try {
   saved = localStorage.getItem("lang") || "en";
-} catch (e) { }
+} catch (e) {}
 
 setLang(saved === "ar" ? "ar" : "en");
 
