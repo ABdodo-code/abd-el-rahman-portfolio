@@ -1,393 +1,378 @@
 <!doctype html>
 <html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="theme-color" content="#F5F5F2" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://i.ytimg.com; media-src 'self'; frame-src 'self' https://www.youtube-nocookie.com; object-src 'none'; base-uri 'self'; form-action 'none'"
+    />
+    <title>Abd El Rahman — Creative Portfolio</title>
+    <meta
+      name="description"
+      content="Personal portfolio of Abd El Rahman Mohammed, showcasing creative projects, visual design, video work, web experiences and digital projects."
+    />
+    <meta property="og:title" content="Abd El Rahman — Creative Portfolio" />
+    <meta
+      property="og:description"
+      content="Personal portfolio of Abd El Rahman Mohammed, showcasing creative projects, visual design, video work, web experiences and digital projects."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://i.ytimg.com" />
+    <link rel="preconnect" href="https://www.youtube-nocookie.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300..900&family=Instrument+Sans:wght@400..700&family=Instrument+Serif:ital@0;1&family=Readex+Pro:wght@300..700&family=Cairo:wght@400;600;900&family=Italianno&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/png" sizes="256x256" href="favicon.png?v=2" />
+    <link rel="apple-touch-icon" href="favicon.png?v=2" />
+    <link rel="stylesheet" href="styles.css" />
+    <noscript
+      ><style>
+        .rv,
+        .fan .ix,
+        .torn .cut {
+          opacity: 1 !important;
+        }
+        .clip {
+          clip-path: none !important;
+        }
+      </style></noscript
+    >
+  </head>
+  <body>
+    <svg width="0" height="0" style="position: absolute" aria-hidden="true" focusable="false">
+      <symbol id="ad" viewBox="0 0 350 240">
+        <path
+          fill="currentColor"
+          fill-rule="evenodd"
+          d="M-0.0 239.5C-0.0 239.2 8.6 224.0 19.2 205.7C29.7 187.4 40.0 169.7 41.9 166.3L45.5 160.0 L91.4 160.0C133.6 160.0 137.2 159.9 136.6 158.3C136.2 157.4 126.6 140.4 115.1 120.6C89.4 76.0 91.7 80.5 93.1 77.8C94.1 75.8 107.6 52.5 130.3 13.2C134.2 6.5 137.7 1.0 138.0 1.0C138.3 1.0 140.4 4.3 142.7 8.3C144.9 12.2 155.0 29.7 165.0 47.0C175.0 64.3 188.9 88.4 195.9 100.5C202.9 112.6 213.5 131.0 219.5 141.4L230.4 160.2 L235.0 159.7C248.1 158.1 260.3 149.3 266.3 137.1C271.1 127.3 271.1 112.7 266.3 102.9C262.3 94.7 255.2 87.9 246.2 83.7L239.5 80.5 L212.2 80.2C197.3 80.0 185.0 79.5 185.0 79.0C185.0 78.5 186.9 74.9 189.3 70.8C191.7 66.8 201.9 49.2 212.0 31.6L230.4 -0.2 L238.9 0.4C290.5 4.5 333.1 40.2 346.7 90.7C350.5 104.5 350.7 133.5 347.2 147.3C335.0 195.9 297.2 230.9 248.9 238.4C240.8 239.7 232.5 240.0 211.1 239.8L183.8 239.5 L161.1 200.3C148.7 178.7 138.3 161.0 137.9 161.0C137.6 161.0 127.2 178.7 114.8 200.2L92.1 239.5 L46.1 239.8C20.7 239.9 -0.0 239.8 -0.0 239.5Z"
+        />
+      </symbol>
+    </svg>
+    <div class="cur" id="cur" aria-hidden="true"></div>
+    <div class="cur-ring" id="cur-ring" aria-hidden="true"></div>
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="theme-color" content="#F5F5F2" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="referrer" content="strict-origin-when-cross-origin" />
-  <meta http-equiv="Content-Security-Policy"
-    content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://i.ytimg.com; media-src 'self'; frame-src 'self' https://www.youtube-nocookie.com; object-src 'none'; base-uri 'self'; form-action 'none'" />
-  <title>Abd El Rahman — Creative Portfolio</title>
-  <meta name="description"
-    content="Personal portfolio of Abd El Rahman Mohammed, showcasing creative projects, visual design, video work, web experiences and digital projects." />
-  <meta property="og:title" content="Abd El Rahman — Creative Portfolio" />
-  <meta property="og:description"
-    content="Personal portfolio of Abd El Rahman Mohammed, showcasing creative projects, visual design, video work, web experiences and digital projects." />
-  <meta property="og:type" content="website" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preconnect" href="https://i.ytimg.com" />
-  <link rel="preconnect" href="https://www.youtube-nocookie.com" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300..900&family=Instrument+Sans:wght@400..700&family=Instrument+Serif:ital@0;1&family=Readex+Pro:wght@300..700&family=Cairo:wght@400;600;900&family=Italianno&display=swap"
-    rel="stylesheet" />
-  <link rel="icon" type="image/png" sizes="256x256" href="favicon.png?v=2" />
-  <link rel="apple-touch-icon" href="favicon.png?v=2" />
-  <link rel="stylesheet" href="styles.css" />
-  <noscript>
-    <style>
-      .rv,
-      .fan .ix,
-      .torn .cut {
-        opacity: 1 !important;
-      }
-
-      .clip {
-        clip-path: none !important;
-      }
-    </style>
-  </noscript>
-</head>
-
-<body>
-  <svg width="0" height="0" style="position: absolute" aria-hidden="true" focusable="false">
-    <symbol id="ad" viewBox="0 0 350 240">
-      <path fill="currentColor" fill-rule="evenodd"
-        d="M-0.0 239.5C-0.0 239.2 8.6 224.0 19.2 205.7C29.7 187.4 40.0 169.7 41.9 166.3L45.5 160.0 L91.4 160.0C133.6 160.0 137.2 159.9 136.6 158.3C136.2 157.4 126.6 140.4 115.1 120.6C89.4 76.0 91.7 80.5 93.1 77.8C94.1 75.8 107.6 52.5 130.3 13.2C134.2 6.5 137.7 1.0 138.0 1.0C138.3 1.0 140.4 4.3 142.7 8.3C144.9 12.2 155.0 29.7 165.0 47.0C175.0 64.3 188.9 88.4 195.9 100.5C202.9 112.6 213.5 131.0 219.5 141.4L230.4 160.2 L235.0 159.7C248.1 158.1 260.3 149.3 266.3 137.1C271.1 127.3 271.1 112.7 266.3 102.9C262.3 94.7 255.2 87.9 246.2 83.7L239.5 80.5 L212.2 80.2C197.3 80.0 185.0 79.5 185.0 79.0C185.0 78.5 186.9 74.9 189.3 70.8C191.7 66.8 201.9 49.2 212.0 31.6L230.4 -0.2 L238.9 0.4C290.5 4.5 333.1 40.2 346.7 90.7C350.5 104.5 350.7 133.5 347.2 147.3C335.0 195.9 297.2 230.9 248.9 238.4C240.8 239.7 232.5 240.0 211.1 239.8L183.8 239.5 L161.1 200.3C148.7 178.7 138.3 161.0 137.9 161.0C137.6 161.0 127.2 178.7 114.8 200.2L92.1 239.5 L46.1 239.8C20.7 239.9 -0.0 239.8 -0.0 239.5Z" />
-    </symbol>
-  </svg>
-  <div class="cur" id="cur" aria-hidden="true"></div>
-  <div class="cur-ring" id="cur-ring" aria-hidden="true"></div>
-
-  <header class="nav" id="nav">
-    <a class="brand" href="#top" data-aria="logoAria" aria-label="AD — Abd El Rahman"><svg class="mark"
-        viewBox="0 0 350 240" aria-hidden="true">
-        <use href="#ad" />
-      </svg></a>
-    <nav class="links" aria-label="Main">
-      <a class="d" href="#work" data-i="nWork">Work</a><a class="d" href="#about" data-i="nAbout">About</a><a class="d"
-        href="#experiments" data-i="nExp">Experiments</a><a class="d" href="#contact" data-i="nContact">Contact</a>
-    </nav>
-    <div class="nav-end">
-      <span class="lang" role="group" aria-label="Language"><button data-l="en" aria-pressed="true">EN</button><button
-          data-l="ar" aria-pressed="false">AR</button></span>
-      <a class="nav-cta" href="#contact"><span data-i="navCta">Let's talk</span><span class="flip">→</span></a>
-      <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">
-        <i></i><i></i>
-      </button>
-    </div>
-    <i class="progress" id="progress" aria-hidden="true"></i>
-  </header>
-  <div class="menu" id="menu">
-    <a href="#work" data-i="nWork">Work</a><a href="#about" data-i="nAbout">About</a><a href="#experiments"
-      data-i="nExp">Experiments</a><a href="#contact" data-i="nContact">Contact</a>
-  </div>
-
-  <main id="top">
-    <!-- HERO -->
-    <section class="hero wrap" aria-label="Intro">
-      <div class="hero-top">
-        <span class="chip" data-i="hMeta1">Visual creator · Digital maker</span>
-        <span class="chip live"><i></i><span data-i="hMeta2">Open to selected projects</span></span>
+    <header class="nav" id="nav">
+      <a class="brand" href="#top" data-aria="logoAria" aria-label="AD — Abd El Rahman"
+        ><svg class="mark" viewBox="0 0 350 240" aria-hidden="true"><use href="#ad" /></svg
+      ></a>
+      <nav class="links" aria-label="Main">
+        <a class="d" href="#work" data-i="nWork">Work</a
+        ><a class="d" href="#about" data-i="nAbout">About</a
+        ><a class="d" href="#experiments" data-i="nExp">Experiments</a
+        ><a class="d" href="#contact" data-i="nContact">Contact</a>
+      </nav>
+      <div class="nav-end">
+        <span class="lang" role="group" aria-label="Language"
+          ><button data-l="en" aria-pressed="true">EN</button
+          ><button data-l="ar" aria-pressed="false">AR</button></span
+        >
+        <a class="nav-cta" href="#contact"
+          ><span data-i="navCta">Let's talk</span><span class="flip">→</span></a
+        >
+        <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">
+          <i></i><i></i>
+        </button>
       </div>
-
-      <div class="stage">
-        <p class="word disp" id="word" aria-label="Portfolio"></p>
-        <p class="stm" data-i="hStmt" data-html>
-          I turn <mark>ideas</mark> into <mark>visual experiences</mark>.
-        </p>
-
-        <span class="sticker s1"><i class="si si-a" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M20.2 6 3 11l-.9-2.4c-.3-1.1.3-2.2 1.3-2.5l13.5-4c1.1-.3 2.2.3 2.5 1.3Z" />
-              <path d="m6.2 5.3 3.1 3.9" />
-              <path d="m12.4 3.4 3.1 4" />
-              <path d="M3 11h18v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z" />
-            </svg></i><span data-i="hS1">Visual stories</span></span>
-        <span class="sticker s2"><i class="si si-b" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true">
-              <rect x="3" y="4" width="18" height="16" rx="3" />
-              <path d="M3 9h18" />
-              <path d="m10 13-2 2 2 2" />
-              <path d="m14 13 2 2-2 2" />
-            </svg></i><span data-i="hS2">Digital experiences</span></span>
-        <span class="sticker s3"><i class="si si-c" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="m12 19 7-7 3 3-7 7-3-3z" />
-              <path d="m18 13-1.5-7.5L2 2l3.5 14.5L13 18l5-5z" />
-              <path d="m2 2 7.586 7.586" />
-              <circle cx="11" cy="11" r="2" />
-            </svg></i><span data-i="hS3">Creative projects</span></span>
-      </div>
-
-      <div class="hero-bot">
-        <div class="who">
-          <span class="avatar" aria-hidden="true"></span>
-          <div>
-            <h1 aria-label="Abd El Rahman">
-              <span data-i="hName1">Abd</span> <span data-i="hName2">El Rahman</span>
-            </h1>
-            <p data-i="hNote">Abd El Rahman Mohammed, a young creator from Egypt.</p>
-          </div>
-        </div>
-        <p class="scroll-hint meta"><span data-i="hScroll">Scroll to explore</span> <span class="arrow">↓</span></p>
-        <div class="yr">
-          <b class="disp">2026</b>
-          <span class="seal" aria-hidden="true"><svg class="mark" viewBox="0 0 350 240">
-              <use href="#ad" />
-            </svg></span>
-        </div>
-      </div>
-    </section>
-
-    <div class="marq" aria-hidden="true">
-      <div class="track"></div>
+      <i class="progress" id="progress" aria-hidden="true"></i>
+    </header>
+    <div class="menu" id="menu">
+      <a href="#work" data-i="nWork">Work</a><a href="#about" data-i="nAbout">About</a
+      ><a href="#experiments" data-i="nExp">Experiments</a
+      ><a href="#contact" data-i="nContact">Contact</a>
     </div>
 
-    <!-- WORK -->
-    <section id="work" class="wrap">
-      <div class="head">
-        <h2 class="disp" data-i="wTitle" data-html>Selected Work</h2>
-        <p data-i="wSub">A selection of projects, ideas and visual experiences.</p>
-      </div>
-      <div class="idx fan" id="idx"></div>
-      <div id="projects"></div>
-    </section>
+    <main id="top">
+      <!-- HERO -->
+      <section class="hero wrap" aria-label="Intro">
+        <div class="hero-top">
+          <span class="chip" data-i="hMeta1">Visual creator · Digital maker</span>
+          <span class="chip live"><i></i><span data-i="hMeta2">Open to selected projects</span></span>
+        </div>
 
-    <!-- WHAT I CREATE -->
-    <section class="wrap" aria-labelledby="cr">
-      <div class="head">
-        <h2 class="disp" id="cr" data-i="cTitle" data-html>What I create</h2>
-      </div>
-      <div class="three">
-        <div class="gc">
-          <span class="gi" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M20.2 6 3 11l-.9-2.4c-.3-1.1.3-2.2 1.3-2.5l13.5-4c1.1-.3 2.2.3 2.5 1.3Z" />
-              <path d="m6.2 5.3 3.1 3.9" />
-              <path d="m12.4 3.4 3.1 4" />
-              <path d="M3 11h18v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z" />
-            </svg></span>
-          <h3 data-i="c1">Visual stories</h3>
-          <p data-i="c1d">Video, editing, pacing and visual storytelling.</p>
-        </div>
-        <div class="gc">
-          <span class="gi" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="m12 19 7-7 3 3-7 7-3-3z" />
-              <path d="m18 13-1.5-7.5L2 2l3.5 14.5L13 18l5-5z" />
-              <path d="m2 2 7.586 7.586" />
-              <circle cx="11" cy="11" r="2" />
-            </svg></span>
-          <h3 data-i="c2">Visual systems</h3>
-          <p data-i="c2d">Graphic design, layouts, identity and communication.</p>
-        </div>
-        <div class="gc">
-          <span class="gi" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true">
-              <rect x="3" y="4" width="18" height="16" rx="3" />
-              <path d="M3 9h18" />
-              <path d="m10 13-2 2 2 2" />
-              <path d="m14 13 2 2-2 2" />
-            </svg></span>
-          <h3 data-i="c3">Digital experiences</h3>
-          <p data-i="c3d">Websites, interfaces and interactive ideas.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- TOOLS + PROCESS -->
-    <section class="wrap band" aria-label="Tools and process">
-      <div class="bg3">
-        <div class="bc">
-          <h2 class="disp h2s" data-i="tTitle">Tools</h2>
-          <div class="tools">
-            <span class="tool t-pr"><b>Pr</b><small>Premiere Pro</small></span>
-            <span class="tool t-ae"><b>Ae</b><small>After Effects</small></span>
-            <span class="tool t-ps"><b>Ps</b><small>Photoshop</small></span>
-            <span class="tool t-cv"><b>Cv</b><small>Canva</small></span>
-            <span class="tool t-ht"><b>&lt;/&gt;</b><small>HTML / CSS</small></span>
-            <span class="tool t-js"><b>JS</b><small>JavaScript</small></span>
-          </div>
-          <p class="meta sub" data-i="apT">Approach</p>
-          <ul class="bl">
-            <li data-i="ap0">Ideas</li>
-            <li data-i="ap1">Visual direction</li>
-            <li data-i="ap2">Execution</li>
-            <li data-i="ap3">Refinement</li>
-          </ul>
-          <p class="meta sub" data-i="cfT">Current focus</p>
-          <ul class="bl">
-            <li data-i="cf0">Creative projects</li>
-            <li data-i="cf1">Digital experiences</li>
-            <li data-i="cf2">Visual storytelling</li>
-          </ul>
-        </div>
-        <div class="bc">
-          <h2 class="disp h2s" data-i="pTitle">Work process</h2>
-          <div class="steps" id="steps"></div>
-        </div>
-        <div class="bc quote">
-          <p class="qm" aria-hidden="true">“</p>
-          <p class="qt" data-i="tEnd">Turning ideas into something real.</p>
-          <p class="script sig" data-i="sig">Abd El Rahman</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- PINNED WORDS -->
-    <section class="tr" id="tr" aria-label="Idea, design, build, refine">
-      <div class="pin">
-        <h2 class="disp w" data-w>Idea</h2>
-        <h2 class="disp w" data-w>Design</h2>
-        <h2 class="disp w" data-w>Build</h2>
-        <h2 class="disp w" data-w>Refine</h2>
-        <p class="disp w end" data-w data-i="tEnd">Turning ideas into something real.</p>
-        <div class="cnt meta"><span class="num" id="trc">01</span> / 05</div>
-      </div>
-    </section>
-
-    <!-- TORN PAPER BAND -->
-    <div class="torn" aria-hidden="true">
-      <div class="torn-sheet"></div>
-      <div class="torn-band">
-        <p class="torn-name disp" data-i="fName">ABD EL RAHMAN</p>
-        <svg class="spark sp1" viewBox="0 0 40 40">
-          <path d="M20 0c1 11 9 19 20 20-11 1-19 9-20 20-1-11-9-19-20-20 11-1 19-9 20-20z" />
-        </svg>
-        <svg class="spark sp2" viewBox="0 0 40 40">
-          <path d="M20 0c1 11 9 19 20 20-11 1-19 9-20 20-1-11-9-19-20-20 11-1 19-9 20-20z" />
-        </svg>
-      </div>
-      <div class="cut"><span class="cut-img" id="cutout"></span></div>
-    </div>
-
-    <!-- ABOUT -->
-    <section id="about" class="wrap paper">
-      <div class="about">
-        <div class="sel">
-          <div class="ph" role="img" aria-label="Portrait placeholder">
-            <span data-i="phPortrait">Portrait</span>
-          </div>
-          <i class="hd h1"></i><i class="hd h2"></i><i class="hd h3"></i><i class="hd h4"></i>
-        </div>
-        <div class="atext">
-          <h2 class="disp" data-i="aTitle">About</h2>
-          <blockquote data-i="aText">
-            I'm Abd El Rahman, a young Egyptian creator exploring the space between visual
-            storytelling, design and technology.
-          </blockquote>
-          <div class="jr">
-            <p class="meta" data-i="jTitle">Journey</p>
-            <div class="r">
-              <span class="num">2026</span>
-              <h3>Craft Egypt</h3>
-              <p data-i="j1">Multidisciplinary digital project.</p>
-            </div>
-            <div class="r">
-              <span class="num">2026</span>
-              <h3 data-i="j2t">Visual content</h3>
-              <p data-i="j2">Video / Design / Content.</p>
-            </div>
-            <div class="r">
-              <span class="num">2026</span>
-              <h3 data-i="j3t">Digital projects</h3>
-              <p data-i="j3">Web and interactive experiences.</p>
+        <div class="stage">
+          <p class="word disp" id="word" aria-label="Portfolio"></p>
+          <div class="sub">
+            <span class="sticker s1"><i class="si si-a" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.2 6 3 11l-.9-2.4c-.3-1.1.3-2.2 1.3-2.5l13.5-4c1.1-.3 2.2.3 2.5 1.3Z"/><path d="m6.2 5.3 3.1 3.9"/><path d="m12.4 3.4 3.1 4"/><path d="M3 11h18v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/></svg></i><span data-i="hS1">Visual stories</span></span>
+            <p class="stm" data-i="hStmt" data-html>
+            I turn <mark>ideas</mark> into <mark>visual experiences</mark>.
+          </p>
+            <div class="side">
+              <span class="sticker s2"><i class="si si-b" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M3 9h18"/><path d="m10 13-2 2 2 2"/><path d="m14 13 2 2-2 2"/></svg></i><span data-i="hS2">Digital experiences</span></span>
+              <span class="sticker s3"><i class="si si-c" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 19 7-7 3 3-7 7-3-3z"/><path d="m18 13-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="m2 2 7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg></i><span data-i="hS3">Creative projects</span></span>
             </div>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- CERTIFICATES -->
-    <section id="certificates" class="wrap">
-      <div class="head">
-        <h2 class="disp" data-i="ceTitle">Certificates</h2>
-        <p data-i="ceSub">Courses, certifications and learning milestones.</p>
-      </div>
-      <div class="certs" id="certs"></div>
-    </section>
-
-    <!-- EXPERIMENTS -->
-    <section id="experiments" class="wrap">
-      <div class="head">
-        <h2 class="disp" data-i="eTitle">Experiments</h2>
-        <p data-i="eSub">Not everything starts as a project.</p>
-      </div>
-      <div class="xp-grid">
-        <div class="xp x1" tabindex="0">
-          <span class="meta" data-i="e1">Motion</span>
-          <span class="g g-motion" aria-hidden="true">M</span>
-          <span class="foot"><b class="num meta">EXP.01</b><span class="meta" data-i="x1">Timing and
-              easing</span></span>
-        </div>
-        <div class="xp x2" tabindex="0">
-          <span class="meta" data-i="e2">Typography</span>
-          <span class="g g-type" aria-hidden="true">Aa</span>
-          <span class="foot"><b class="num meta">EXP.02</b><span class="meta" data-i="x2">Weight and width</span></span>
-        </div>
-        <div class="xp x3" tabindex="0">
-          <span class="meta" data-i="e3">Web</span>
-          <span class="g g-code" aria-hidden="true"><b>&lt;</b><b>/</b><b>&gt;</b></span>
-          <span class="foot"><b class="num meta">EXP.03</b><span class="meta" data-i="x3">Code and
-              structure</span></span>
-        </div>
-        <div class="xp x4" tabindex="0">
-          <span class="meta" data-i="e4">Visual</span>
-          <span class="g g-half" aria-hidden="true"></span>
-          <span class="foot"><b class="num meta">EXP.04</b><span class="meta" data-i="x4">Contrast and
-              form</span></span>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="wrap contact">
-      <div class="cpanel">
-        <p class="avail"><i></i><span data-i="avail">Open to selected projects</span></p>
-        <div class="cgrid">
-          <div>
-            <h2 class="disp" data-i="ctTitle" data-html>Let's work together.</h2>
-            <p class="csub" data-i="ctSub">
-              Have an idea, project or visual story in mind? Let's talk.
-            </p>
-            <a class="mail" id="mail" href="#contact">m87957411@gmail.com</a>
-            <div class="soc" id="soc"></div>
+        <div class="hero-bot">
+          <div class="who">
+            <span class="avatar" aria-hidden="true"></span>
+            <div>
+              <h1 aria-label="Abd El Rahman">
+                <span data-i="hName1">Abd</span> <span data-i="hName2">El Rahman</span>
+              </h1>
+              <p data-i="hNote">Abd El Rahman Mohammed, a young creator from Egypt.</p>
+            </div>
           </div>
-          <div class="cvis" aria-hidden="true">
-            <div class="lap">
-              <div class="scr2">
-                <span class="meta" data-i="ph">Project image</span><b class="disp">Craft<br />Egypt</b>
+          <p class="scroll-hint meta"><span data-i="hScroll">Scroll to explore</span> <span class="arrow">↓</span></p>
+          <div class="yr">
+            <b class="disp">2026</b>
+            <span class="seal" aria-hidden="true"
+              ><svg class="mark" viewBox="0 0 350 240"><use href="#ad" /></svg
+            ></span>
+          </div>
+        </div>
+      </section>
+
+      <div class="marq" aria-hidden="true"><div class="track"></div></div>
+
+      <!-- WORK -->
+      <section id="work" class="wrap">
+        <div class="head">
+          <h2 class="disp" data-i="wTitle" data-html>Selected Work</h2>
+          <p data-i="wSub">A selection of projects, ideas and visual experiences.</p>
+        </div>
+        <div class="idx fan" id="idx"></div>
+        <div id="projects"></div>
+      </section>
+
+      <!-- WHAT I CREATE -->
+      <section class="wrap" aria-labelledby="cr">
+        <div class="head">
+          <h2 class="disp" id="cr" data-i="cTitle" data-html>What I create</h2>
+        </div>
+        <div class="three">
+          <div class="gc">
+            <span class="gi" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.2 6 3 11l-.9-2.4c-.3-1.1.3-2.2 1.3-2.5l13.5-4c1.1-.3 2.2.3 2.5 1.3Z"/><path d="m6.2 5.3 3.1 3.9"/><path d="m12.4 3.4 3.1 4"/><path d="M3 11h18v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/></svg></span>
+            <h3 data-i="c1">Visual stories</h3>
+            <p data-i="c1d">Video, editing, pacing and visual storytelling.</p>
+          </div>
+          <div class="gc">
+            <span class="gi" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 19 7-7 3 3-7 7-3-3z"/><path d="m18 13-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="m2 2 7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg></span>
+            <h3 data-i="c2">Visual systems</h3>
+            <p data-i="c2d">Graphic design, layouts, identity and communication.</p>
+          </div>
+          <div class="gc">
+            <span class="gi" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M3 9h18"/><path d="m10 13-2 2 2 2"/><path d="m14 13 2 2-2 2"/></svg></span>
+            <h3 data-i="c3">Digital experiences</h3>
+            <p data-i="c3d">Websites, interfaces and interactive ideas.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- TOOLS + PROCESS -->
+      <section class="wrap band" aria-label="Tools and process">
+        <div class="bg3">
+          <div class="bc">
+            <h2 class="disp h2s" data-i="tTitle">Tools</h2>
+            <div class="tools">
+              <span class="tool t-pr"><b>Pr</b><small>Premiere Pro</small></span>
+              <span class="tool t-ae"><b>Ae</b><small>After Effects</small></span>
+              <span class="tool t-ps"><b>Ps</b><small>Photoshop</small></span>
+              <span class="tool t-cv"><b>Cv</b><small>Canva</small></span>
+              <span class="tool t-ht"><b>&lt;/&gt;</b><small>HTML / CSS</small></span>
+              <span class="tool t-js"><b>JS</b><small>JavaScript</small></span>
+            </div>
+            <p class="meta sub" data-i="apT">Approach</p>
+            <ul class="bl">
+              <li data-i="ap0">Ideas</li>
+              <li data-i="ap1">Visual direction</li>
+              <li data-i="ap2">Execution</li>
+              <li data-i="ap3">Refinement</li>
+            </ul>
+            <p class="meta sub" data-i="cfT">Current focus</p>
+            <ul class="bl">
+              <li data-i="cf0">Creative projects</li>
+              <li data-i="cf1">Digital experiences</li>
+              <li data-i="cf2">Visual storytelling</li>
+            </ul>
+          </div>
+          <div class="bc">
+            <h2 class="disp h2s" data-i="pTitle">Work process</h2>
+            <div class="steps" id="steps"></div>
+          </div>
+          <div class="bc quote">
+            <p class="qm" aria-hidden="true">“</p>
+            <p class="qt" data-i="tEnd">Turning ideas into something real.</p>
+            <p class="script sig" data-i="sig">Abd El Rahman</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- PINNED WORDS -->
+      <section class="tr" id="tr" aria-label="Idea, design, build, refine">
+        <div class="pin">
+          <h2 class="disp w" data-w>Idea</h2>
+          <h2 class="disp w" data-w>Design</h2>
+          <h2 class="disp w" data-w>Build</h2>
+          <h2 class="disp w" data-w>Refine</h2>
+          <p class="disp w end" data-w data-i="tEnd">Turning ideas into something real.</p>
+          <div class="cnt meta"><span class="num" id="trc">01</span> / 05</div>
+        </div>
+      </section>
+
+      <!-- TORN PAPER BAND -->
+      <div class="torn" aria-hidden="true">
+        <div class="torn-sheet"></div>
+        <div class="torn-band">
+          <p class="torn-name disp" data-i="fName">ABD EL RAHMAN</p>
+          <svg class="spark sp1" viewBox="0 0 40 40"><path d="M20 0c1 11 9 19 20 20-11 1-19 9-20 20-1-11-9-19-20-20 11-1 19-9 20-20z" /></svg>
+          <svg class="spark sp2" viewBox="0 0 40 40"><path d="M20 0c1 11 9 19 20 20-11 1-19 9-20 20-1-11-9-19-20-20 11-1 19-9 20-20z" /></svg>
+        </div>
+        <div class="cut"><span class="cut-img" id="cutout"></span></div>
+      </div>
+
+      <!-- ABOUT -->
+      <section id="about" class="wrap paper">
+        <div class="about">
+          <div class="sel">
+            <div class="ph" role="img" aria-label="Portrait placeholder">
+              <span data-i="phPortrait">Portrait</span>
+            </div>
+            <i class="hd h1"></i><i class="hd h2"></i><i class="hd h3"></i><i class="hd h4"></i>
+          </div>
+          <div class="atext">
+            <h2 class="disp" data-i="aTitle">About</h2>
+            <blockquote data-i="aText">
+              I'm Abd El Rahman, a young Egyptian creator exploring the space between visual
+              storytelling, design and technology.
+            </blockquote>
+            <div class="jr">
+              <p class="meta" data-i="jTitle">Journey</p>
+              <div class="r">
+                <span class="num">2026</span>
+                <h3>Craft Egypt</h3>
+                <p data-i="j1">Multidisciplinary digital project.</p>
               </div>
-              <div class="base"></div>
+              <div class="r">
+                <span class="num">2026</span>
+                <h3 data-i="j2t">Visual content</h3>
+                <p data-i="j2">Video / Design / Content.</p>
+              </div>
+              <div class="r">
+                <span class="num">2026</span>
+                <h3 data-i="j3t">Digital projects</h3>
+                <p data-i="j3">Web and interactive experiences.</p>
+              </div>
             </div>
           </div>
         </div>
+      </section>
+
+      <!-- CERTIFICATES -->
+      <section id="certificates" class="wrap">
+        <div class="head">
+          <h2 class="disp" data-i="ceTitle">Certificates</h2>
+          <p data-i="ceSub">Courses, certifications and learning milestones.</p>
+        </div>
+        <div class="certs" id="certs"></div>
+      </section>
+
+      <!-- EXPERIMENTS -->
+      <section id="experiments" class="wrap">
+        <div class="head">
+          <h2 class="disp" data-i="eTitle">Experiments</h2>
+          <p data-i="eSub">Not everything starts as a project.</p>
+        </div>
+        <div class="xp-grid">
+          <div class="xp x1" tabindex="0">
+            <span class="meta" data-i="e1">Motion</span>
+            <span class="g g-motion" aria-hidden="true">M</span>
+            <span class="foot"
+              ><b class="num meta">EXP.01</b><span class="meta" data-i="x1">Timing and easing</span></span
+            >
+          </div>
+          <div class="xp x2" tabindex="0">
+            <span class="meta" data-i="e2">Typography</span>
+            <span class="g g-type" aria-hidden="true">Aa</span>
+            <span class="foot"
+              ><b class="num meta">EXP.02</b><span class="meta" data-i="x2">Weight and width</span></span
+            >
+          </div>
+          <div class="xp x3" tabindex="0">
+            <span class="meta" data-i="e3">Web</span>
+            <span class="g g-code" aria-hidden="true"><b>&lt;</b><b>/</b><b>&gt;</b></span>
+            <span class="foot"
+              ><b class="num meta">EXP.03</b><span class="meta" data-i="x3">Code and structure</span></span
+            >
+          </div>
+          <div class="xp x4" tabindex="0">
+            <span class="meta" data-i="e4">Visual</span>
+            <span class="g g-half" aria-hidden="true"></span>
+            <span class="foot"
+              ><b class="num meta">EXP.04</b><span class="meta" data-i="x4">Contrast and form</span></span
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="wrap contact">
+        <div class="cpanel">
+          <p class="avail"><i></i><span data-i="avail">Open to selected projects</span></p>
+          <div class="cgrid">
+            <div>
+              <h2 class="disp" data-i="ctTitle" data-html>Let's work together.</h2>
+              <p class="csub" data-i="ctSub">
+                Have an idea, project or visual story in mind? Let's talk.
+              </p>
+              <a class="mail" id="mail" href="#contact">m87957411@gmail.com</a>
+              <div class="soc" id="soc"></div>
+            </div>
+            <div class="cvis" aria-hidden="true">
+              <div class="lap">
+                <div class="scr2">
+                  <span class="meta" data-i="ph">Project image</span><b class="disp">Craft<br />Egypt</b>
+                </div>
+                <div class="base"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="wrap">
+        <a class="brand" href="#top" aria-label="AD — Abd El Rahman"
+          ><svg class="mark" viewBox="0 0 350 240" aria-hidden="true"><use href="#ad" /></svg></a
+        ><span class="meta" data-i="fName">ABD EL RAHMAN</span
+        ><span class="meta" data-i="fCopy">© 2026 Abd El Rahman Mohammed</span>
+        <span class="lang meta"
+          ><button data-l="en">EN</button><button data-l="ar">AR</button></span
+        >
+        <a class="meta" href="#top"><span data-i="top">Back to top</span> ↑</a>
       </div>
-    </section>
-  </main>
+    </footer>
 
-  <footer>
-    <div class="wrap">
-      <a class="brand" href="#top" aria-label="AD — Abd El Rahman"><svg class="mark" viewBox="0 0 350 240"
-          aria-hidden="true">
-          <use href="#ad" />
-        </svg></a><span class="meta" data-i="fName">ABD EL RAHMAN</span><span class="meta" data-i="fCopy">© 2026 Abd El
-        Rahman Mohammed</span>
-      <span class="lang meta"><button data-l="en">EN</button><button data-l="ar">AR</button></span>
-      <a class="meta" href="#top"><span data-i="top">Back to top</span> ↑</a>
-    </div>
-  </footer>
-
-  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Certificate">
-    <div class="box">
-      <button class="x" id="mx" aria-label="Close">×</button>
-      <div class="ph" id="mph"></div>
-      <h3 id="mt"></h3>
-      <p class="meta" id="mm"></p>
-      <p id="md"></p>
-    </div>
-  </div>
-
-  <div class="modal" id="pmodal" role="dialog" aria-modal="true" aria-label="Presentation">
-    <div class="box pbox">
-      <button class="x" id="pmx" aria-label="Close">×</button>
-      <div class="pstage" id="pstage"></div>
-      <div class="pnav" id="pnav" hidden>
-        <button id="pprev" type="button" aria-label="Previous"><span class="flip">←</span></button>
-        <span class="meta num" id="pcount"></span>
-        <button id="pnext" type="button" aria-label="Next"><span class="flip">→</span></button>
+    <div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Certificate">
+      <div class="box">
+        <button class="x" id="mx" aria-label="Close">×</button>
+        <div class="ph" id="mph"></div>
+        <h3 id="mt"></h3>
+        <p class="meta" id="mm"></p>
+        <p id="md"></p>
       </div>
     </div>
-  </div>
 
-  <script src="script.js" defer></script>
-</body>
+    <div class="modal" id="pmodal" role="dialog" aria-modal="true" aria-label="Presentation">
+      <div class="box pbox">
+        <button class="x" id="pmx" aria-label="Close">×</button>
+        <div class="pstage" id="pstage"></div>
+        <div class="pnav" id="pnav" hidden>
+          <button id="pprev" type="button" aria-label="Previous"><span class="flip">←</span></button>
+          <span class="meta num" id="pcount"></span>
+          <button id="pnext" type="button" aria-label="Next"><span class="flip">→</span></button>
+        </div>
+      </div>
+    </div>
 
+    <script src="script.js" defer></script>
+  </body>
 </html>
